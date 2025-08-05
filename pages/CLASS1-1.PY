@@ -79,4 +79,4 @@
 name = "apple"
 age = 18
 print(f"hello, my name is {name}, I am {age} years old")  # f-string格式化
-# 可以将
+# 可以將變數或其他形態的資料放到f字串裏面的{}，這樣就可以在字串中顯示
