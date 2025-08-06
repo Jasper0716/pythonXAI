@@ -70,13 +70,3 @@ a = input("請輸入一些文字:")
 print("輸入結束")
 print(int(a) + 10)
 print(type(a))  # 證明透過input()輸入內容都是字串
-
-
-a = int(input("請輸入數字:"))
-print(a * a * 3.14)
-
-# 字串格式化
-name = "apple"
-age = 18
-print(f"hello, my name is {name}, I am {age} years old")  # f-string格式化
-# 可以將變數或其他形態的資料放到f字串裏面的{}，這樣就可以在字串中顯示
