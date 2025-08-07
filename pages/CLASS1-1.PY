@@ -70,3 +70,61 @@ a = input("請輸入一些文字:")
 print("輸入結束")
 print(int(a) + 10)
 print(type(a))  # 證明透過input()輸入內容都是字串
+menu_list =[
+{"id":1, "name":"1.漢堡","price":60,"colaries":294.9,"$":"元","kcal":"大卡"},
+{"id":2, "name":"2.米漢堡","price":80,"colaries":217.7,"$":"元","kcal":"大卡"},
+{"id":3, "name":"3.薯條","price":30,"colaries":311.9,"$":"元","kcal":"大卡"},
+{"id":4, "name":"4.沙拉","price":45,"colaries":62,"$":"元","kcal":"大卡"},
+{"id":5, "name":"5.可樂","price":20,"colaries":37.5,"$":"元","kcal":"大卡"},
+{"id":6, "name":"6.紅茶","price":15,"colaries":1,"$":"元","kcal":"大卡"}]
+order_list = []
+print('==========歡迎光臨本餐廳,祝您用餐愉快==========')
+print('今日菜單:')
+for menu in menu_list:
+print(menu.get('name'),menu.get('price'),menu.get('$'),menu.get('colaries'),menu.get('kcal'))
+while True:
+print('='*50)
+print('1.點餐\n2.取消點餐\n3.確認菜單\n4.結帳')
+serve = int(input("請選擇服務:"))
+if serve == 1:
+while True:
+menu_add = input("請輸入菜名編號或者輸入X結束點餐:")
+if menu_add != "X":
+for i in menu_list:
+if i.get('id')== int(menu_add):
+order_list.append(i)
+else:
+print('==========已完成點餐=========')
+bill = 0
+for order in order_list:
+print(order.get('name'),order.get('price'),order.get('$'),order.get('colaries'),order.get('kcal'))
+bill += int(order.get('price'))
+print(' 小計:{}元'.format(bill))
+break
+elif serve == 2:
+menu_del = input("請輸入要取消之菜名:")
+order_list.remove(order)
+print('==========已完成點餐=========')
+bill = 0
+for order in order_list:
+ print(order.get('name'),order.get('price'),order.get('$'),order.get('colaries'),order.get('kcal'))
+bill += int(order.get('price'))
+print(' 小計:{}元'.format(bill))
+ elif serve == 3:
+print('==========已完成點餐=========')
+bill = 0
+for order in order_list:
+print(order.get('name'),order.get('price'),order.get('$'),order.get('colaries'),order.get('kcal'))
+bill += int(order.get('price'))
+print(' 小計:{}元'.format(bill))
+elif serve == 4:
+print('==========您的消費明細==========')
+bill = 0
+for order in order_list:
+print(order.get('name'),order.get('price'),order.get('$'))
+bill += int(order.get('price'))
+print(' 總計:{}元'.format(bill))
+print('==========謝謝光臨，歡迎再來==========')
+break
+輸入X依舊無法break
+謝謝大家...
